@@ -1,6 +1,24 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || "https://plksvatjdylpuhjitbfc.supabase.co";
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || "";
+const getConfig = () => {
+  return {
+    url: "https://plksvatjdylpuhjitbfc.supabase.co",
+    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBsa3N2YXRqZHlscHVoaml0YmZjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA3NjQ5MzMsImV4cCI6MjA2NjM0MDkzM30.IdM8u1iq88C0ruwp7IkMB7PxwnfwmRyl6uLnBmZq5ys",
+  };
+};
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+let cached: SupabaseClient | null = null;
+
+export const getSupabase = (): SupabaseClient => {
+  if (cached) return cached;
+  const { url, anonKey } = getConfig();
+  cached = createClient(url, anonKey, {
+    auth: {
+      autoRefreshToken: false,
+      persistSession: false,
+    },
+  });
+  return cached;
+};
+
+export const supabase = getSupabase();
