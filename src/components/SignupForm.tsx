@@ -62,8 +62,8 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
   };
 
   return (
-    <div className="animate-fade-in" style={{ animationDelay: "0.4s" }}>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="name">Full Name</Label>
           <Input
@@ -131,8 +131,6 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
 
         <p className="text-xs text-center text-muted-foreground">
           By joining, you agree to our terms and conditions.
-          <br />
-          Membership is valid for 12 months.
         </p>
       </form>
     </div>
