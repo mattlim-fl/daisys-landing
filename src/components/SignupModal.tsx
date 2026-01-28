@@ -29,7 +29,7 @@ export function SignupModal({ isOpen, onClose, onSuccess }: SignupModalProps) {
           <DialogTitle className="text-xl text-center">
             Become a Member
           </DialogTitle>
-          <DialogDescription className="text-center">
+          <DialogDescription className="text-center text-neutral-500">
             12-month membership &middot; 24+ only
           </DialogDescription>
         </DialogHeader>
@@ -41,13 +41,13 @@ export function SignupModal({ isOpen, onClose, onSuccess }: SignupModalProps) {
               <div className="w-5 h-5 rounded-full bg-daisy-gold flex items-center justify-center flex-shrink-0">
                 <Check className="w-3 h-3 text-daisy-black" />
               </div>
-              <span className="text-sm">{text}</span>
+              <span className="text-sm text-neutral-800">{text}</span>
             </div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="border-t border-border" />
+        <div className="border-t border-neutral-200" />
 
         {/* Form */}
         <SignupForm onSuccess={onSuccess} />

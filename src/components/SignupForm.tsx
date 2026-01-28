@@ -70,10 +70,10 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
             id="name"
             placeholder="Your full name"
             {...register("name")}
-            className={errors.name ? "border-destructive" : ""}
+            className={errors.name ? "border-red-500" : ""}
           />
           {errors.name && (
-            <p className="text-sm text-destructive">{errors.name.message}</p>
+            <p className="text-sm text-red-600">{errors.name.message}</p>
           )}
         </div>
 
@@ -84,10 +84,10 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
             type="tel"
             placeholder="04XX XXX XXX"
             {...register("phone")}
-            className={errors.phone ? "border-destructive" : ""}
+            className={errors.phone ? "border-red-500" : ""}
           />
           {errors.phone && (
-            <p className="text-sm text-destructive">{errors.phone.message}</p>
+            <p className="text-sm text-red-600">{errors.phone.message}</p>
           )}
         </div>
 
@@ -97,19 +97,19 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
             id="date_of_birth"
             type="date"
             {...register("date_of_birth")}
-            className={errors.date_of_birth ? "border-destructive" : ""}
+            className={errors.date_of_birth ? "border-red-500" : ""}
           />
           {errors.date_of_birth && (
-            <p className="text-sm text-destructive">{errors.date_of_birth.message}</p>
+            <p className="text-sm text-red-600">{errors.date_of_birth.message}</p>
           )}
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-neutral-500">
             Members must be 24 years or older
           </p>
         </div>
 
         {error && (
-          <div className="p-3 rounded-md bg-destructive/10 border border-destructive/20">
-            <p className="text-sm text-destructive">{error}</p>
+          <div className="p-3 rounded-md bg-red-50 border border-red-200">
+            <p className="text-sm text-red-600">{error}</p>
           </div>
         )}
 
@@ -129,7 +129,7 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
           )}
         </Button>
 
-        <p className="text-xs text-center text-muted-foreground">
+        <p className="text-xs text-center text-neutral-500">
           By joining, you agree to our terms and conditions.
         </p>
       </form>
