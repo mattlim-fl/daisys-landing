@@ -23,7 +23,11 @@ export default function Home() {
 
   return (
     <div className="h-screen bg-background overflow-hidden">
-      <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/20 via-background to-background pointer-events-none" />
+      <div
+        className="fixed inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/backdrop.png')" }}
+      />
+      <div className="fixed inset-0 bg-black/60" />
 
       <div className="relative z-10 h-full flex flex-col items-center justify-center px-4">
         <div className="text-center animate-fade-in">
