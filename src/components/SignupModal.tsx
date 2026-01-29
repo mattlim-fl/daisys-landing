@@ -10,9 +10,9 @@ import { SignupForm } from "@/components/SignupForm";
 import { Member } from "@/services/memberService";
 
 const privileges = [
-  "Priority Entry +1 Every Week",
-  "No Cover Charge For You +1 Every Week",
-  "$60 Welcome Drinks On Your First Visit",
+  { id: "priority-entry", text: "Priority Entry +1 Every Week" },
+  { id: "no-cover", text: "No Cover Charge For You +1 Every Week" },
+  { id: "welcome-drinks", text: "$60 Welcome Drinks On Your First Visit" },
 ];
 
 interface SignupModalProps {
@@ -36,12 +36,12 @@ export function SignupModal({ isOpen, onClose, onSuccess }: SignupModalProps) {
 
         {/* Benefits */}
         <div className="space-y-2 py-2">
-          {privileges.map((text, i) => (
-            <div key={i} className="flex items-center gap-3">
+          {privileges.map((privilege) => (
+            <div key={privilege.id} className="flex items-center gap-3">
               <div className="w-5 h-5 rounded-full bg-daisy-gold flex items-center justify-center flex-shrink-0">
                 <Check className="w-3 h-3 text-daisy-black" />
               </div>
-              <span className="text-sm text-neutral-800">{text}</span>
+              <span className="text-sm text-neutral-800">{privilege.text}</span>
             </div>
           ))}
         </div>
