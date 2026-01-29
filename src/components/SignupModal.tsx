@@ -10,8 +10,8 @@ import { SignupForm } from "@/components/SignupForm";
 import { Member } from "@/services/memberService";
 
 const privileges = [
-  "Priority Entry +1",
-  "No Cover Charge For You +1",
+  "Priority Entry +1 Every Week",
+  "No Cover Charge For You +1 Every Week",
   "$60 Welcome Drinks On Your First Visit",
 ];
 
