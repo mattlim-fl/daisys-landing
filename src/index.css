@@ -2,6 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Perfectly Nineties Font Family */
+@font-face {
+  font-family: 'Perfectly Nineties';
+  src: url('/fonts/PerfectlyNineties-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Perfectly Nineties';
+  src: url('/fonts/PerfectlyNineties-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Perfectly Nineties';
+  src: url('/fonts/PerfectlyNineties-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Perfectly Nineties';
+  src: url('/fonts/PerfectlyNineties-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Trileqe Font Family */
+@font-face {
+  font-family: 'Trileqe Fatt';
+  src: url('/fonts/TrileqeFatt-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trileqe Fatt';
+  src: url('/fonts/TrileqeFatt-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trileqe Hybrid';
+  src: url('/fonts/TrileqeHybrid-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Trileqe Hybrid';
+  src: url('/fonts/TrileqeHybrid-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     --background: 0 0% 4%;

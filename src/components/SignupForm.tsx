@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { memberService, Member } from "@/services/memberService";
@@ -65,42 +64,42 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
     <div>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="name">Full Name</Label>
+          <Label htmlFor="name" className="text-neutral-200">Full Name</Label>
           <Input
             id="name"
             placeholder="Your full name"
             {...register("name")}
-            className={errors.name ? "border-red-500" : ""}
+            className={`bg-neutral-800 border-neutral-700 text-white placeholder:text-neutral-500 focus:border-[#f97316] focus:ring-[#f97316] ${errors.name ? "border-red-500" : ""}`}
           />
           {errors.name && (
-            <p className="text-sm text-red-600">{errors.name.message}</p>
+            <p className="text-sm text-red-400">{errors.name.message}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="phone">Phone Number</Label>
+          <Label htmlFor="phone" className="text-neutral-200">Phone Number</Label>
           <Input
             id="phone"
             type="tel"
             placeholder="04XX XXX XXX"
             {...register("phone")}
-            className={errors.phone ? "border-red-500" : ""}
+            className={`bg-neutral-800 border-neutral-700 text-white placeholder:text-neutral-500 focus:border-[#f97316] focus:ring-[#f97316] ${errors.phone ? "border-red-500" : ""}`}
           />
           {errors.phone && (
-            <p className="text-sm text-red-600">{errors.phone.message}</p>
+            <p className="text-sm text-red-400">{errors.phone.message}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="date_of_birth">Date of Birth</Label>
+          <Label htmlFor="date_of_birth" className="text-neutral-200">Date of Birth</Label>
           <Input
             id="date_of_birth"
             type="date"
             {...register("date_of_birth")}
-            className={errors.date_of_birth ? "border-red-500" : ""}
+            className={`bg-neutral-800 border-neutral-700 text-white placeholder:text-neutral-500 focus:border-[#f97316] focus:ring-[#f97316] [color-scheme:dark] ${errors.date_of_birth ? "border-red-500" : ""}`}
           />
           {errors.date_of_birth && (
-            <p className="text-sm text-red-600">{errors.date_of_birth.message}</p>
+            <p className="text-sm text-red-400">{errors.date_of_birth.message}</p>
           )}
           <p className="text-xs text-neutral-500">
             Members must be 24 years or older
@@ -108,26 +107,25 @@ export function SignupForm({ onSuccess }: SignupFormProps) {
         </div>
 
         {error && (
-          <div className="p-3 rounded-md bg-red-50 border border-red-200">
-            <p className="text-sm text-red-600">{error}</p>
+          <div className="p-3 rounded-md bg-red-900/30 border border-red-800">
+            <p className="text-sm text-red-400">{error}</p>
           </div>
         )}
 
-        <Button
+        <button
           type="submit"
-          size="lg"
-          className="w-full"
           disabled={isSubmitting}
+          className="w-full h-12 rounded-full bg-[#f97316] hover:bg-[#ea580c] text-white font-display italic text-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? (
-            <>
+            <span className="flex items-center justify-center">
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               Joining...
-            </>
+            </span>
           ) : (
             "Join Daisy's Social Club"
           )}
-        </Button>
+        </button>
 
         <p className="text-xs text-center text-neutral-500">
           By joining, you agree to our terms and conditions.

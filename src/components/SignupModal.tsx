@@ -24,12 +24,12 @@ interface SignupModalProps {
 export function SignupModal({ isOpen, onClose, onSuccess }: SignupModalProps) {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
+      <DialogContent className="sm:max-w-md bg-[#1a1a1a] border-neutral-800 text-white">
         <DialogHeader>
-          <DialogTitle className="text-xl text-center">
+          <DialogTitle className="text-2xl text-center font-display font-black text-[#e8e4a8]">
             Become a Member
           </DialogTitle>
-          <DialogDescription className="text-center text-neutral-500">
+          <DialogDescription className="text-center text-neutral-400 font-display italic">
             12-month membership &middot; 24+ only
           </DialogDescription>
         </DialogHeader>
@@ -38,16 +38,16 @@ export function SignupModal({ isOpen, onClose, onSuccess }: SignupModalProps) {
         <div className="space-y-2 py-2">
           {privileges.map((privilege) => (
             <div key={privilege.id} className="flex items-center gap-3">
-              <div className="w-5 h-5 rounded-full bg-daisy-gold flex items-center justify-center flex-shrink-0">
-                <Check className="w-3 h-3 text-daisy-black" />
+              <div className="w-5 h-5 rounded-full bg-[#f97316] flex items-center justify-center flex-shrink-0">
+                <Check className="w-3 h-3 text-white" />
               </div>
-              <span className="text-sm text-neutral-800">{privilege.text}</span>
+              <span className="text-sm text-neutral-200">{privilege.text}</span>
             </div>
           ))}
         </div>
 
         {/* Divider */}
-        <div className="border-t border-neutral-200" />
+        <div className="border-t border-neutral-700" />
 
         {/* Form */}
         <SignupForm onSuccess={onSuccess} />

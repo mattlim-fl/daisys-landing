@@ -86,7 +86,9 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        display: ["Inter", "sans-serif"],
+        display: ["Perfectly Nineties", "serif"],
+        "trileqe-fatt": ["Trileqe Fatt", "sans-serif"],
+        "trileqe-hybrid": ["Trileqe Hybrid", "sans-serif"],
       },
     },
   },
