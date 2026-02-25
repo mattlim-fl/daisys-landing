@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { SignupModal } from "@/components/SignupModal";
+import { ContactModal } from "@/components/ContactModal";
 import { SuccessScreen } from "@/components/SuccessScreen";
 import { Member } from "@/services/memberService";
 
 export default function Home() {
   const [member, setMember] = useState<Member | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   if (member) {
     return (
@@ -69,16 +71,24 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Join button */}
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="mt-8 px-8 py-3 rounded-full bg-[#f97316] hover:bg-[#ea580c] text-white font-display italic text-lg transition-all duration-200 hover:scale-105"
-          style={{
-            boxShadow: "0 4px 20px rgba(249, 115, 22, 0.4)",
-          }}
-        >
-          Join The Club
-        </button>
+        {/* Action buttons */}
+        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="px-8 py-3 rounded-full bg-[#f97316] hover:bg-[#ea580c] text-white font-display italic text-lg transition-all duration-200 hover:scale-105"
+            style={{
+              boxShadow: "0 4px 20px rgba(249, 115, 22, 0.4)",
+            }}
+          >
+            Join The Club
+          </button>
+          <button
+            onClick={() => setIsContactModalOpen(true)}
+            className="px-8 py-3 rounded-full border-2 border-white/30 hover:border-white/60 text-white font-display italic text-lg transition-all duration-200 hover:scale-105"
+          >
+            Contact Us
+          </button>
+        </div>
       </div>
 
       <SignupModal
@@ -88,6 +98,11 @@ export default function Home() {
           setIsModalOpen(false);
           setMember(newMember);
         }}
+      />
+
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
       />
     </div>
   );
