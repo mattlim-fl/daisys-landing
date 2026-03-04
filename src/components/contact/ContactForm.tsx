@@ -40,7 +40,7 @@ interface ContactFormProps {
 
 const categoryLabels: Record<ContactCategory, string> = {
   lost_property: "Lost Property",
-  skantech: "Skantech Inquiry",
+  skantech: "Scantech Inquiry",
   function_inquiry: "Private Events",
   business_hours: "Opening Hours",
   something_else: "Something Else",
